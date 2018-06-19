@@ -1,0 +1,102 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+header {
+    background: teal;
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 110px;
+}
+
+#instructions {
+    background: lightgrey;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin: 0;
+    padding-top: 5px;
+}
+
+#game_window {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    background: beige;
+    border: 1px solid black;
+}
+
+#question_window {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.answer {
+    width: 40%;
+    background: lightpink;
+    border: 1px solid black;
+    height: 30px;
+    line-height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.answer:hover {
+    background: pink;
+}
+
+#correct_answer {
+    width: 40%;
+    background: green;
+    border: 1px solid black;
+    height: 30px;
+    line-height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-weight: bold;
+}
+
+.good {
+    color: green;
+}
+
+.middle {
+    color: orange;
+}
+
+.bad {
+    color: red;
+}
+
+#progress_bar {
+    color: grey;
+}
+
+#new_game {
+    width: 100%;
+    background: green;
+    height: 30px;
+}
+

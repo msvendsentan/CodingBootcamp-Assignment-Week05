@@ -62,7 +62,7 @@ var questionList = [
         answers: ["A bit", "A lot", "A ton", "A+"],
         correctAnswer: "A+"
     }
-]
+];
 
 var correctList = [
     "Well done!",
@@ -72,7 +72,7 @@ var correctList = [
     "Great job!",
     "Bingo!",
     "That's right!"
-]
+];
 
 var incorrectList = [
     "Aw, drat!",
@@ -81,7 +81,7 @@ var incorrectList = [
     "That's wrong!",
     "Nope!",
     "Not quite!"
-]
+];
 
 //declare functions
 
@@ -132,7 +132,7 @@ function resultCountdown() {
 }
 
 function newQuestion(number) {
-    $("#progress_bar").html("<p>Question " + (number + 1) + " of " + questionList.length + ".");
+    $("#progress_bar").html("<p>Question " + (number + 1) + " of " + questionList.length + "</p>");
     $("#question_window").html("<p>" + questionList[number].question + "</p>");
     shuffleArray(questionList[number].answers);
     $("#answer_window").empty();
@@ -148,7 +148,7 @@ function correctAnswer() {
     questionTimerToggle = 1;
     resultTimer = resultTimerMaster;
     correctCount++;
-    $("#question_window").html("<p>" + correctList[Math.floor(Math.random() * correctList.length)] + " The correct answer was indeed:</p>");
+    $("#question_window").html("<p><span class=\"good\">" + correctList[Math.floor(Math.random() * correctList.length)] + "</span> The correct answer was indeed:</p>");
     $("#answer_window").html("<p id=\"correct_answer\">" + questionList[currentQuestion].correctAnswer + "</p>");
     resultCountdown();
 }
@@ -158,7 +158,7 @@ function incorrectAnswer() {
     questionTimerToggle = 1;
     resultTimer = resultTimerMaster;
     incorrectCount++;
-    $("#question_window").html("<p>" + incorrectList[Math.floor(Math.random() * correctList.length)] + " The correct answer was:</p>");
+    $("#question_window").html("<p><span class=\"bad\">" + incorrectList[Math.floor(Math.random() * incorrectList.length)] + "</span> The correct answer was:</p>");
     $("#answer_window").html("<p id=\"correct_answer\">" + questionList[currentQuestion].correctAnswer + "</p>");
     resultCountdown();
 }
@@ -167,7 +167,7 @@ function missedAnswer() {
     questionTimerToggle = 1;
     resultTimer = resultTimerMaster;
     missedCount++;
-    $("#question_window").html("<p>Time's up! The correct answer was:</p>");
+    $("#question_window").html("<p><span class=\"middle\">Time's up!</span> The correct answer was:</p>");
     $("#answer_window").html("<p id=\"correct_answer\">" + questionList[currentQuestion].correctAnswer + "</p>");
     resultCountdown();
 }
@@ -178,9 +178,9 @@ function resultsScreen() {
     $("#question_window").html("<p>Game over! Here's your score:</p>");
     $("#answer_window").empty();
     $("#answer_window")
-        .append("<p>Correct: " + correctCount + "</p>")
-        .append("<p>Incorrect: " + incorrectCount + "</p>")
-        .append("<p>Missed: " + missedCount + "</p>")
+        .append("<p><b><span class=\"good\">Correct:</span> " + correctCount + "</b></p>")
+        .append("<p><b><span class=\"bad\">Incorrect:</span> " + incorrectCount + "</b></p>")
+        .append("<p><b><span class=\"middle\">Missed:</span> " + missedCount + "</b></p>")
         .append("<button id=\"new_game\">New Game</button>");
 }
 
