@@ -27,9 +27,13 @@ h1 {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    height: 70px;
+    height: 100%;
     text-align: center;
     margin-top: 20px;
+}
+
+#instructions > p {
+    margin-bottom: 5px;
 }
 
 h2 {
